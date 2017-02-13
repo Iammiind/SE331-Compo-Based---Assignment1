@@ -1,0 +1,7 @@
+<div class="product" *ngFor="let product of products">
+  <h3> Name : {{ product.name }} </h3>
+  <p> <b>Description</b> : {{ getDescription(product.description) }}<br>
+    <b>Price</b> : {{ product.price }}
+  </p>
+  <a class="btn btn-primary btn-lg" href="#" role="button" (click)="showDetail(product)"> Detail </a>
+</div>

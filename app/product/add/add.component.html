@@ -1,0 +1,42 @@
+<div>
+    <!-- ID of the product -->
+  <div class = "form-group">
+    <label> ID </label>
+    <input type = "text" class = "form-control" placeholder = "ID" [(ngModel)] = "newProduct.id" >
+  </div>
+    <!-- name of the product -->
+  <div class = "form-group">
+    <label> Name </label>
+    <input type = "text" class = "form-control" placeholder = "name" [(ngModel)] = "newProduct.name">
+  </div>
+    <!-- description of the product -->
+  <div class = "form-group">
+    <label> Description </label>
+    <input type = "text" class = "form-control" placeholder = "description" [(ngModel)] = "newProduct.description">
+  </div>
+    <!-- picture pf the product -->
+  <div class = "form-group">
+        <label> Picture </label>
+        <input type = "file" #refpic (change) = "addPicture(refpic.files[0].name)">
+  </div>
+    <!-- price of the product -->
+  <div class = "form-group">
+    <label> Price </label>
+    <input type = "number" [(ngModel)] = "newProduct.price">
+  </div>
+    <!-- amount of the product left in the store -->
+  <div class = "form-group">
+    <label> Amount </label>
+    <input type = "number" [(ngModel)] = "newProduct.amount">
+  </div>
+    <!-- Rating of the product -->
+  <div class = "form-group">
+    <label> Rating </label>
+    <input type = "number" [(ngModel)] = "newProduct.rating">
+  </div>
+    <!-- submit button -->
+  <button type = "submit" class="btn btn-default" (click) = "addProduct()"> Submit </button>
+
+  <button type = "submit" class="btn btn-default" (click) = "reset(refpic)"> Reset </button>
+</div>
+

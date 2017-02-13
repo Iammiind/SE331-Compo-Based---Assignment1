@@ -1,0 +1,25 @@
+<div *ngFor = "let product of products">
+    <dl class="dl-horizontal">
+        <!-- ID -->
+        <dt> ID : </dt>
+        <dd> {{ product.id }} </dd>
+        <!-- Name -->
+        <dt> Name : </dt>
+        <dd> {{ product.name }} </dd>
+         <!-- Description -->
+        <dt> Description : </dt>
+        <dd> {{ product.description }} </dd>
+        <!-- Picture -->
+        <dt> Picture : </dt>
+        <dd> {{ product.picture }} </dd>
+         <!-- Price -->
+        <dt> Price : </dt>
+        <dd> {{ product.price }} </dd>
+        <!-- Amount -->
+        <dt> Amount : </dt>
+        <dd> {{ product.amount }} </dd>
+        <!-- Rating -->
+        <dt> Rating : </dt>
+        <dd> {{ product.rating }} </dd>
+    </dl>
+</div>
