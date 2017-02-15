@@ -4,8 +4,8 @@ import { Product } from '../product'
 
 @Component ({
     selector : 'add',
-    templateUrl : 'app/product/add/add.component.html'
-    // styleUrls : []
+    templateUrl : 'app/product/add/add.component.html',
+    styleUrls : ['app/product/add/add.component.css']
 })
 
 export class AddComponent {

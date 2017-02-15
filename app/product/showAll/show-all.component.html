@@ -1,25 +1,29 @@
-<div *ngFor = "let product of products">
-    <dl class="dl-horizontal">
-        <!-- ID -->
-        <dt> ID : </dt>
-        <dd> {{ product.id }} </dd>
-        <!-- Name -->
-        <dt> Name : </dt>
-        <dd> {{ product.name }} </dd>
-         <!-- Description -->
-        <dt> Description : </dt>
-        <dd> {{ product.description }} </dd>
-        <!-- Picture -->
-        <dt> Picture : </dt>
-        <dd> {{ product.picture }} </dd>
-         <!-- Price -->
-        <dt> Price : </dt>
-        <dd> {{ product.price }} </dd>
-        <!-- Amount -->
-        <dt> Amount : </dt>
-        <dd> {{ product.amount }} </dd>
-        <!-- Rating -->
-        <dt> Rating : </dt>
-        <dd> {{ product.rating }} </dd>
-    </dl>
+<div class = "product-part" *ngFor = "let product of products">
+    <!-- ID -->
+    <span class = "product-span"> ID : </span>
+    {{ product.id }}
+    <br>
+    <!-- Name --> 
+    <span class = "product-span"> Name : </span>
+    {{ product.name }}
+    <br>
+    <!-- Picture -->
+    <span class = "product-span"> Picture : </span>
+    {{ product.picture }}
+    <br>
+    <!-- Price -->
+    <span class = "product-span"> Price : </span>
+    {{ product.price }}
+    <br>
+    <!-- Amount -->
+    <span class = "product-span"> Amount : </span>
+    {{ product.amount }}
+    <br>
+    <!-- Rating -->
+    <span class = "product-span"> Rating : </span>
+    {{ product.rating }}
+    <br>
+    <!-- Description -->
+    <span class = "product-span"> Description : </span>
+    {{ product.description }}
 </div>
