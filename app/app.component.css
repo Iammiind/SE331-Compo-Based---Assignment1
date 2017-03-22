@@ -1,59 +1,19 @@
-body {
-    background-color : #00556b;
-    font-family : "Magorian Regular";
+.full-background-color {
+  width: 100vw;
+  height: 100vh;
+  background-color: #00556b;
 }
-.app-header {
-    color : white;
-    text-align : center;
-    font-weight : bold;
-    font-size: 50px;  
+.container {
+  font-family : "Magorian Regular";
 }
-.add-part {
-    background-color : #996e00;
-    padding : 100px;
-    color : white; 
+.header {
+  text-align: center;
+  color: white;
 }
-.add-header {
-    text-align : left;
-    margin-top : -30px; 
-    color : white; 
+.hr {
+  width : 100%;
+  align : center;
+  size : 100px;
+  color : #000000;
 }
-.add-hr-line {
-    width : "100%";
-    align-self : "center"; 
-    size : "10px"; 
-    color : "white";
-}
-.show-all-part {
-    background-color : white;
-    color : #212121;
-    padding : 80px;
-    margin-top: 10px;
-}
-.show-all-header {
-     margin-top : -30px; 
-}
-.show-all-product {
-    background-color : #996e00;
-    padding : 20px; 
-    color : white; 
-    margin : 5px; 
-}
-.show-all-hr-line {
-    width : "100%";
-    align-self : "center"; 
-    size : "100px"; 
-    color : #212121;
-}
-.show-list-part {
-    margin-top : 10px; 
-}
-.show-list-header {
-    color : white; 
-}
-.show-list-hr-line {
-    width : "100%";
-    align-self : "center"; 
-    size : "10px"; 
-    color : "white";
-}
+

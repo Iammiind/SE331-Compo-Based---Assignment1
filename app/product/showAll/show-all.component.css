@@ -1,6 +1,9 @@
 .product-part {
-    margin-bottom : 20px;   
+    margin-bottom : 20px;
+    margin-left: 5%;
+    background-color: white;
+    padding: 5%;
 }
 .product-span {
-    font-weight : bold; 
+    font-weight : bold;
 }

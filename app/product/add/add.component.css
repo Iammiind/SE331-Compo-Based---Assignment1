@@ -1,3 +1,8 @@
 input {
     color : black!important;
 }
+.add-form {
+  background-color: #996e00;
+  padding: 5%;
+  margin-left: 5%;
+}

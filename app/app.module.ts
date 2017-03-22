@@ -8,14 +8,19 @@ import { AddComponent } from './product/add/add.component'
 import { ProductDataService } from './services/product-data.service'
 import { ShowAllComponent } from './product/showAll/show-all.component'
 import { ListComponent } from './product/list/list.component'
+import { ProductRoutingModule } from './product/product-routing.module'
+import { MenuComponent } from "./menu/menu.component";
+import { HashLocationStrategy, LocationStrategy } from '@angular/common'
 
 @NgModule({
  declarations: [ AppComponent,
 				AddComponent,
 				ShowAllComponent,
-				ListComponent],
- imports: [BrowserModule, FormsModule, HttpModule],
+				ListComponent,
+        MenuComponent],
+ imports: [BrowserModule, FormsModule, HttpModule, ProductRoutingModule],
  bootstrap: [AppComponent],
- providers: [ProductDataService]
+ providers: [ProductDataService,
+              { provide : LocationStrategy, useClass : HashLocationStrategy }]
 })
 export class AppModule {}

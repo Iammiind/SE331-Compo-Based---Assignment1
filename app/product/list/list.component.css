@@ -1,10 +1,11 @@
 .product {
-    padding : 40px; 
+    padding : 40px;
     margin-bottom: 10px;
     background-color: white;
+    margin-left: 5%;
 }
 .button-detail {
     background-color : #00556b;
-    color : white; 
-    float : right; 
+    color : white;
+    float : right;
 }
