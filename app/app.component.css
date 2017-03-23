@@ -1,14 +1,7 @@
-.full-background-color {
-  width: 100vw;
-  height: 100vh;
-  background-color: #00556b;
-}
-.container {
-  font-family : "Magorian Regular";
-}
 .header {
   text-align: center;
   color: white;
+  background-color: #023744;
 }
 .hr {
   width : 100%;
@@ -16,4 +9,3 @@
   size : 100px;
   color : #000000;
 }
-
