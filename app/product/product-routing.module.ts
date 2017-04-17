@@ -12,7 +12,7 @@ const productRoutes : Routes = [
     path : 'list', component: ListComponent
   },
   {
-    path : 'showAll', component: ShowAllComponent
+    path : 'showAll/:id', component: ShowAllComponent
   },
   {
     path : '',

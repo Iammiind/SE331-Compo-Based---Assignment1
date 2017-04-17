@@ -1,9 +1,9 @@
 <div class="add-form">
-    <!-- ID of the product -->
+     <!--ID of the product 
   <div class = "form-group">
     <label> ID </label>
     <input type = "text" class = "form-control" placeholder = "ID" [(ngModel)] = "newProduct.id" >
-  </div>
+  </div>-->
     <!-- name of the product -->
   <div class = "form-group">
     <label> Name </label>
@@ -17,7 +17,7 @@
     <!-- picture of the product -->
   <div class = "form-group">
     <label> Picture </label><br>
-    <input type = "file" #refpic (change) = "addPicture(refpic.files[0].name)">
+    <input #fileInput type = "file">
   </div>
     <!-- price of the product -->
   <div class = "form-group">
@@ -35,8 +35,7 @@
     <input  type = "number" [(ngModel)] = "newProduct.rating">
   </div>
     <!-- submit button -->
-  <button type = "submit" class="btn btn-default" (click) = "addProduct()"> Submit </button>
-
+  <button type = "submit" class="btn btn-default" (click) = "addProduct(newProduct)"> Submit </button>
   <button type = "submit" class="btn btn-default" (click) = "reset(refpic)"> Reset </button>
 </div>
 

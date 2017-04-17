@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
-import { ProductDataService } from '../../services/product-data.service'
-import { Product } from '../product'
+import { Product } from './../product';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
+import { Router } from "@angular/router";
+import { ProductDataServerService } from '../../services/product-data-server.service';
 
 @Component ({
     selector : 'add',
@@ -11,16 +12,31 @@ import { Product } from '../product'
 export class AddComponent {
 
     // Inject service
-    constructor(private productService : ProductDataService){}
+    constructor(private productDataServerService : ProductDataServerService, private router: Router){}
 
     // create new object => OOP
-    newProduct : Product = new Product()
+    newProduct : Product = new Product();
 
-    addProduct() {
-        this.productService.addProduct(this.newProduct)
-        // alert
-         this.showDetail(this.newProduct)
-         console.log(this.newProduct)
+    @ViewChild('fileInput') inputPictureElement: ElementRef;
+
+    addProduct(product: Product) {
+        let result: Product;
+        console.log(product);
+        let inputPictureElement: HTMLInputElement = this.inputPictureElement.nativeElement;
+
+        this.productDataServerService.addProduct(product, inputPictureElement.files.item(0))
+            .subscribe(resultProduct => {
+                result = resultProduct
+                if(result != null) {
+                    this.router.navigate(['/list']);
+                }else{
+                    alert("Error in adding the student");
+                }
+            })
+        // this.productService.addProduct(this.newProduct)
+        // // alert
+        //  this.showDetail(this.newProduct)
+        //  console.log(this.newProduct)
     }
 
     addPicture(picture) {

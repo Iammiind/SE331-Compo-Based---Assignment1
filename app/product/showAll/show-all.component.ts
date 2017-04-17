@@ -1,6 +1,8 @@
+import { Product } from './../product';
 import { Component } from '@angular/core'
-import { ProductDataService } from '../../services/product-data.service'
-import { Product } from '../product'
+import { ProductDataServerService } from '../../services/product-data-server.service';
+import { ActivatedRoute, Params } from '@angular/router'
+import 'rxjs/add/operator/switchMap'
 
 @Component ({
     selector : 'showAll',
@@ -9,8 +11,15 @@ import { Product } from '../product'
 })
 
 export class ShowAllComponent {
-    constructor(private productService : ProductDataService){}
+    constructor(private productDataServerService : ProductDataServerService, private route : ActivatedRoute){}
+    product : Product;
 
-    products : Product[] = this.productService.getProductsData()
-
+    ngOnInit() {
+        this.route.params.switchMap((params: Params) => this.productDataServerService.getProduct(+params['id'])).subscribe((product: Product) => {
+            if(product) {
+                this.product = product;
+                console.log(this.product);
+            }
+        });
+    }
 }

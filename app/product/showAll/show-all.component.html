@@ -1,29 +1,32 @@
-<div class = "product-part" *ngFor = "let product of products">
+<div class = "product-part">
     <!-- ID -->
     <span class = "product-span"> ID : </span>
-    {{ product.id }}
+    <!-- ? = wait the information -->
+    {{ product?.id }}
     <br>
     <!-- Name --> 
     <span class = "product-span"> Name : </span>
-    {{ product.name }}
+    {{ product?.name }}
     <br>
     <!-- Picture -->
     <span class = "product-span"> Picture : </span>
-    {{ product.picture }}
+        <div *ngIf = "product?.picture != null">
+            <img [src] = "product?.picture">
+        </div>
     <br>
     <!-- Price -->
     <span class = "product-span"> Price : </span>
-    {{ product.price }}
+    {{ product?.price }}
     <br>
     <!-- Amount -->
     <span class = "product-span"> Amount : </span>
-    {{ product.amount }}
+    {{ product?.amount }}
     <br>
     <!-- Rating -->
     <span class = "product-span"> Rating : </span>
-    {{ product.rating }}
+    {{ product?.rating }}
     <br>
     <!-- Description -->
     <span class = "product-span"> Description : </span>
-    {{ product.description }}
+    {{ product?.description }}
 </div>

@@ -1,5 +1,7 @@
+import { Router } from '@angular/router';
+import { ShowAllComponent } from './../showAll/show-all.component';
 import { Component } from '@angular/core';
-import { ProductDataService } from '../../services/product-data.service'
+import { ProductDataServerService } from '../../services/product-data-server.service';
 import { Product } from '../product'
 
 @Component({
@@ -8,9 +10,16 @@ import { Product } from '../product'
     styleUrls : ['app/product/list/list.component.css']
 })
 export class ListComponent {
-    constructor(private productService : ProductDataService){}
+    constructor(private productDataServerService : ProductDataServerService, private router: Router){}
+    products : Product;
 
-    products : Product[] = this.productService.getProductsData()
+    ngOnInit() {
+        this.productDataServerService.getProductsData()
+        .subscribe(resultProduct => {
+            this.products = resultProduct;
+              console.log(this.products);
+        })
+    }
     
     getDescription(productDescription) {
         if ( productDescription.length <= 50 ) {
@@ -23,12 +32,13 @@ export class ListComponent {
     }
 
     showDetail(product) {
-
         // alert(`
         //     ei ${product.name} ei `)
-        alert( " \n ID : " + product.id
-              + " \n Name : " + product.name + " \n Description : " + product.description
-              + " \n Picture : " + product.picture + " \n Price : " + product.price
-              + " \n Amount : " + product.amount + " \n Rating : " + product.rating )
+        // alert( " \n ID : " + product.id
+        //       + " \n Name : " + product.name + " \n Description : " + product.description
+        //       + " \n Picture : " + product.picture + " \n Price : " + product.price
+        //       + " \n Amount : " + product.amount + " \n Rating : " + product.rating )
+        this.router.navigate(['showAll/' + product.id]);
+
     }
 }

@@ -5,7 +5,7 @@ import {FormsModule} from '@angular/forms';
 import {HttpModule} from '@angular/http';
 
 import { AddComponent } from './product/add/add.component'
-import { ProductDataService } from './services/product-data.service'
+import { ProductDataServerService } from './services/product-data-server.service'
 import { ShowAllComponent } from './product/showAll/show-all.component'
 import { ListComponent } from './product/list/list.component'
 import { ProductRoutingModule } from './product/product-routing.module'
@@ -20,7 +20,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common'
         MenuComponent],
  imports: [BrowserModule, FormsModule, HttpModule, ProductRoutingModule],
  bootstrap: [AppComponent],
- providers: [ProductDataService,
+ providers: [ProductDataServerService,
               { provide : LocationStrategy, useClass : HashLocationStrategy }]
 })
 export class AppModule {}

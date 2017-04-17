@@ -6,11 +6,16 @@ import { PRODUCTS } from '../product/mocks'
 export class ProductDataService {
     products : Product[] = PRODUCTS
 
-    addProduct(newProduct) {
-        this.products.push(newProduct)
+    addProduct(product: Product, imageFile: any) {
+        return null;
+        // this.products.push(newProduct)
     }
 
     getProductsData() {
         return this.products
     }
+
+    getProduct(productID: number) {
+        return this.products[productID];
+  }
 }
