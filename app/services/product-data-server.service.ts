@@ -6,7 +6,8 @@ import {Observable} from "rxjs/Rx";
 @Injectable()
 export class ProductDataServerService {
     constructor(private http: Http){}
-    serverPath : String = 'http://localhost:8080/';
+    // serverPath: String = 'http://localhost:8080/';
+    serverPath: String = 'http://54.202.180.243:8080/assignment3/';
 
     getProductsData() {
         let productArray: Product[];
